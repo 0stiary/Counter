@@ -1,0 +1,28 @@
+{
+  "AppSettings": {
+    "Counter": 0
+  },
+  "UISettings": {
+    "TopMost": true,
+    "WindowWidth": 200,
+    "WindowHeight": 200
+  },
+  "PlusButtonSettings": {
+    "Opacity": 1,
+    "Margin": {
+      "Bottom": 0,
+      "Left": 0,
+      "Right": 0,
+      "Top": 0
+    }
+  },
+  "MinusButtonSettings": {
+    "Opacity": 1,
+    "Margin": {
+      "Bottom": 0,
+      "Left": 0,
+      "Right": 0,
+      "Top": 0
+    }
+  }
+}
