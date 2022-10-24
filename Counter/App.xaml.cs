@@ -19,31 +19,33 @@ namespace Counter
 
 		public KeyboardListener KeyboardListener { get; private set; }
 
-
-		protected override void OnStartup(StartupEventArgs e)
+		private void Application_Startup(object sender, StartupEventArgs e)
 		{
-			Configuration = new ConfigurationBuilder()
-			 .SetBasePath(Directory.GetCurrentDirectory())
-			 .AddJsonFile("appConfig.json", optional: false)
-			 .Build();
+			ShutdownMode = ShutdownMode.OnMainWindowClose;
 
+			var configuration = new ConfigurationBuilder();
+
+			var userConfigFilePath = Path.Combine(Directory.GetCurrentDirectory(), "appConfig.json");
+			var configfilePath = File.Exists(userConfigFilePath) ? userConfigFilePath : "Configuration/defaultConfig.json";
+
+			configuration.AddJsonFile(configfilePath, optional: false);
+
+			Configuration = configuration.Build();
 
 			var serviceCollection = new ServiceCollection();
 			ConfigureServices(serviceCollection);
 
 			ServiceProvider = serviceCollection.BuildServiceProvider();
-			
-			//Show MainWindow
+
 			var mainWindow = ServiceProvider.GetRequiredService<MainWindow>();
 			mainWindow.Show();
+			MainWindow = mainWindow;
 		}
 
 		private void ConfigureServices(IServiceCollection services)
 		{
 			services.Configure<AppConfiguration>(Configuration);
 			services.AddSingleton(KeyboardListener = new KeyboardListener());
-			// ...
-
 			services.AddTransient(typeof(MainWindow));
 		}
 
@@ -51,6 +53,5 @@ namespace Counter
 		{
 			KeyboardListener.Dispose();
 		}
-
 	}
 }

@@ -10,11 +10,13 @@
     <SignAssembly>false</SignAssembly>
     <ApplicationIcon>dolphin.ico</ApplicationIcon>
     <AssemblyName>Dolphin</AssemblyName>
+    <AssemblyVersion>1.1.2.0</AssemblyVersion>
+    <SupportedOSPlatformVersion>7.0</SupportedOSPlatformVersion>
+    <FileVersion>1.1.2.0</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
     <None Remove="dolphin.png" />
-    <None Remove="Water.png" />
     <None Include="Resources\Images\Icons\dolphin.png">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
@@ -31,16 +33,16 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="6.0.1" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="6.0.0" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.1" />
     <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="6.0.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Resource Include="Water.png" />
+    <PackageReference Include="System.Drawing.Common" Version="6.0.0" />
   </ItemGroup>
 
   <ItemGroup>
     <None Update="appConfig.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Configuration\defaultConfig.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="Resources\Images\Icons\dolphin.ico">

@@ -4,7 +4,6 @@ using System.Runtime.InteropServices;
 using System.Runtime.CompilerServices;
 using System.Windows.Input;
 using System.Windows.Threading;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Counter.Resources.Utils

@@ -6,7 +6,7 @@
 		"TopMost": false,
 		"WindowWidth": 400,
 		"WindowHeight": 500,
-		"CounterFontSize": 12,
+		"CounterFontSize" : 12,
 		"CounterFontFamily": "Tempus Sans ITC",
 		"ButtonsFontFamily": "Papyrus",
 		"MainWindowBackgroundFilePath": "Resources/Images/Water.png"

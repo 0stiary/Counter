@@ -38,6 +38,10 @@ namespace Counter.Configuration
 		public bool TopMost { get; set; }
 		public double WindowWidth { get; set; }
 		public double WindowHeight { get; set; }
+		public double CounterFontSize { get; set; }
+		public string CounterFontFamily { get; set; }
+		public string ButtonsFontFamily { get; set; }
+		public string MainWindowBackgroundFilePath { get; set; }
 	}
 
 	public class ButtonSettings
